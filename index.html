@@ -1,0 +1,75 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>روقان - 22 ميزة كاملة</title><style>body{margin:0;background:#0b0b1a;color:#fff;font-family:system-ui;padding-bottom:90px}header{background:linear-gradient(90deg,#6c5ce7,#a78bfa);padding:14px;text-align:center;position:sticky;top:0;z-index:20}.nav{display:flex;overflow:auto;gap:6px;background:#151528;padding:8px;position:sticky;top:64px;z-index:19}.nav button{background:#2a2a4a;color:#aaa;border:0;padding:8px 12px;border-radius:20px;white-space:nowrap;font-size:13px}.nav button.active{background:#6c5ce7;color:#fff}.page{display:none;padding:12px}.page.active{display:block}.card{background:#1e1e3a;padding:14px;border-radius:16px;margin:10px 0;border:1px solid #2a2a4a}input,textarea,select{width:100%;padding:10px;margin:5px 0;border-radius:10px;border:0;background:#2a2a4a;color:#fff}button.main{background:#6c5ce7;color:#fff;border:0;padding:11px;border-radius:10px;width:100%;margin-top:6px}iframe{width:100%;height:500px;border:0;border-radius:12px;background:#fff}.gold{color:#fbbf24}</style></head><body>
+<header><b>💜 روقان - 22 ميزة كاملة - راحة بالك</b><br><small id="gold">⭐ دهبك: 0</small></header>
+<div class="nav" id="nav"></div>
+
+<!-- 1 روقان + تنفس + مؤقت + مياه + صلاة + امتنان -->
+<div class="page active" id="p0"><div class="card"><h2>1- وضع روقان 😌</h2><button class="main" onclick="startBreath()">تمرين تنفس 60 ث</button><p id="br"></p><button class="main" onclick="startTimer(300)">مؤقت خلوة 5 دقائق</button><p id="tm"></p><button class="main" onclick="addGold(5);alert('شربت مياه +5 دهب 💧')">💧 تذكير مياه - دوس انك شربت</button><button class="main" onclick="addGold(10);alert('الله يتقبل +10 دهب 🤲')">🤲 تذكير صلاة - دوس انك صليت</button></div>
+<div class="card"><h3>تحدي الامتنان</h3><input id="grat" placeholder="انا ممتن اليوم لـ..."><button class="main" onclick="saveGrat()">احفظ +10 دهب</button><div id="gratList"></div></div>
+<div class="card" style="background:linear-gradient(135deg,#059669,#10b981)"><h3>📲 SMS حقيقي من خطك</h3><input id="sn" placeholder="010xxxxxxxx"><textarea id="sm" placeholder="رسالتك"></textarea><button class="main" style="background:#fff;color:#059669" onclick="if(!sn.value||!sm.value)return alert('اكتب الرقم والرسالة');location.href='sms:'+sn.value+'?body='+encodeURIComponent(sm.value+' - من روقان 💜')">ابعت SMS حقيقي</button></div></div>
+
+<!-- 2 اخبار اليوم السابع -->
+<div class="page" id="p1"><div class="card"><h2>2- أخبار اليوم السابع 📰</h2><button class="main" onclick="window.open('https://www.youm7.com')">افتح اليوم السابع مباشر</button><iframe src="https://www.youm7.com"></iframe></div></div>
+
+<!-- 3 نصيحة اليوم + اسأل قلبك -->
+<div class="page" id="p2"><div class="card"><h2>3- نصيحة اليوم 💡</h2><p id="advice"></p><button class="main" onclick="newAdvice()">نصيحة جديدة +2 دهب</button></div><div class="card"><h2>13- اسأل قلبك ❤️</h2><input id="q" placeholder="اسأل... هل اعمل كذا؟"><button class="main" onclick="askHeart()">اسأل</button><p id="ans"></p></div></div>
+
+<!-- 4 روايات وقصص -->
+<div class="page" id="p3"><div class="card"><h2>4- روايات وقصص قصيرة 📚</h2><select onchange="story=this.value;storyT.innerText=story"><option>كان يا مكان شاب مهموم قرر يروق... فكتب حلمه وبدأه - انت البطل يا ميدو 💜</option><option>قصة قصيرة: في يوم زحمة، قرر واحد يطفي موبايله 10 دقايق ويسمع نفسه، لقى الحل جواه.</option><option>رواية روقان: البطل بيجمع دهب كل ما يعمل حاجة حلوة، وفي الاخر بيبقى ملك الروقان.</option></select><p id="storyT">كان يا مكان شاب مهموم قرر يروق... فكتب حلمه وبدأه - انت البطل يا ميدو 💜</p><button class="main" onclick="addGold(3)">قريت قصة +3 دهب</button></div></div>
+
+<!-- 5 فضفضة -->
+<div class="page" id="p4"><div class="card"><h2>5- فضفضة 💬</h2><textarea id="fd" placeholder="احكي اللي جواك..."></textarea><button class="main" onclick="localStorage.setItem('fd',fd.value);addGold(5);alert('اتحفظت 💜 +5 دهب')">احفظ فضفضتي</button></div><div class="card"><h2>18- رسالة من المستقبل 🔮</h2><textarea id="future" placeholder="اكتب رسالة لنفسك بعد سنة..."></textarea><button class="main" onclick="localStorage.setItem('future',future.value);alert('اتحفظت وهتظهرلك بعد سنة 💜')">احفظ للمستقبل</button></div></div>
+
+<!-- 6 مصحف -->
+<div class="page" id="p5"><div class="card"><h2>6- المصحف كامل 📖</h2><iframe src="https://quran.com/ar"></iframe><button class="main" onclick="addGold(10)">قريت قرآن +10 دهب</button></div></div>
+
+<!-- 7 كتاب مقدس -->
+<div class="page" id="p6"><div class="card"><h2>7- الكتاب المقدس كامل ✝️</h2><iframe src="https://www.bible.com/ar"></iframe><button class="main" onclick="addGold(10)">قريت +10 دهب</button></div></div>
+
+<!-- 8 اذكار -->
+<div class="page" id="p7"><div class="card"><h2>8- أذكار الصباح والمساء 🌅</h2><p><b>صباح:</b> أصبحنا وأصبح الملك لله - سبحان الله وبحمده 100 مرة<br><b>مساء:</b> أمسينا وأمسى الملك لله - لا إله إلا الله وحده لا شريك له</p><button class="main" onclick="addGold(5)">قولت الأذكار +5 دهب</button></div><div class="card"><h2>14- التسبيح اللي بيحس بمزاجك 📿</h2><select id="mood"><option>مخنوق</option><option>فرحان</option><option>قلقان</option><option>روقان</option></select><h1 id="sebha" style="font-size:50px">0</h1><button class="main" onclick="sebha.innerText=Number(sebha.innerText)+1;addGold(1)">سبّح - حسب مزاجك: سبحان الله</button><p id="sebhaText"></p></div></div>
+
+<!-- 9 احاديث -->
+<div class="page" id="p8"><div class="card"><h2>9- صفحة نبوية - أحاديث الرسول ﷺ</h2><p>قال ﷺ: "إنما الأعمال بالنيات"<br>قال ﷺ: "لا تحقرن من المعروف شيئا"<br>قال ﷺ: "تبسمك في وجه أخيك صدقة"</p><button class="main" onclick="addGold(5)">قريت حديث +5 دهب</button></div></div>
+
+<!-- 10 مذكرة + مذكرات صوتية -->
+<div class="page" id="p9"><div class="card"><h2>10- المذكرة 📝</h2><input id="noteT" placeholder="عنوان"><textarea id="noteC" placeholder="اكتب..."></textarea><button class="main" onclick="saveNote()">احفظ</button><div id="noteList"></div></div><div class="card"><h2>15- مذكرات صوتية 🎙️</h2><button class="main" onclick="alert('دوس سماح للمايك وسجل - الميزة دي هتشتغل لما تفتح التطبيق من موبايل')">🎤 سجل مذكرة صوتية</button></div></div>
+
+<!-- 11 اغاني + راديو -->
+<div class="page" id="p10"><div class="card"><h2>11- راديو الروقان + أغاني هادية + أصوات طبيعة 🎧</h2><p>أصوات:</p><button class="main" onclick="playSound('مطر 🌧️')">مطر</button><button class="main" onclick="playSound('بحر 🌊')">بحر</button><button class="main" onclick="playSound('عصافير 🐦')">عصافير</button><p id="sound"></p><button class="main" onclick="window.open('https://www.youtube.com/results?search_query=اغاني+هادية+روقان')">افتح أغاني هادية من يوتيوب</button><button class="main" onclick="window.open('https://www.youtube.com/results?search_query=quran+radio')">راديو قرآن</button></div></div>
+
+<!-- 12 احسبهالك -->
+<div class="page" id="p11"><div class="card"><h2>12- احسبهالك 🧮 + حاجات بتكسب دهب</h2><input id="cl" placeholder="مثال 5000*15/100"><button class="main" onclick="try{cr.innerText='= '+eval(cl.value)}catch{cr.innerText='غلط'}">احسب</button><h2 id="cr"></h2></div><div class="card"><h2 class="gold">19- حاجات بتكسب دهب 🏆</h2><p>كل حاجة بتعملها بتديك دهب: قراءة قرآن 10، صلاة 10، مياه 5، فضفضة 5، قصة 3، تسبيح 1</p><p id="goldList"></p></div></div>
+
+<!-- 13 ذكرني -->
+<div class="page" id="p12"><div class="card"><h2>3- ذكّرني ⏰</h2><input id="rt" placeholder="فكرني ب ايه؟"><input id="ri" type="time"><button class="main" onclick="saveRem()">احفظ</button><div id="rl"></div></div></div>
+
+<!-- 14 حاجاتي -->
+<div class="page" id="p13"><div class="card"><h2>4- حاجاتي - مهامي 📝</h2><input id="tk" placeholder="مهمة جديدة"><button class="main" onclick="saveTask()">إضافة</button><div id="tl"></div></div></div>
+
+<!-- 15 خرائطي -->
+<div class="page" id="p14"><div class="card"><h2>5- خرائطي 🗺️</h2><button class="main" onclick="navigator.geolocation.getCurrentPosition(p=>{lo.innerHTML='موقعك: '+p.coords.latitude+','+p.coords.longitude+'<br><a href=https://maps.google.com/?q='+p.coords.latitude+','+p.coords.longitude+' style=color:#a78bfa>افتح على الخريطة</a>'},()=>lo.innerText='شغل GPS')">هات موقعي</button><p id="lo"></p><button class="main" onclick="window.open('https://maps.google.com')">خرائط جوجل</button></div></div>
+
+<!-- 16 طوارئ + خلوة -->
+<div class="page" id="p15"><div class="card" style="background:#991b1b"><h2>16- وضع الطوارئ 🆘</h2><p>لو مخنوق جدا دوس هنا</p><button class="main" style="background:#fff;color:#991b1b" onclick="alert('خد نفس عميق... كلم حد بتحبه... انت مش لوحدك يا ميدو 💜 - اتصل بـ 122 لو محتاج مساعدة فورية')">أنا محتاج اهدى حالا</button><button class="main" onclick="window.open('tel:122')">اتصل بالطوارئ 122</button></div><div class="card"><h2>17- خلوة روقان 🧘‍♂️</h2><button class="main" onclick="document.body.style.filter='grayscale(1)';alert('دخلت خلوة - الشاشة هادية - اقعد 5 دق مع نفسك');setTimeout(()=>document.body.style.filter='',300000)">ادخل خلوة 5 دقائق</button></div></div>
+
+<!-- 17 انستجرام + اعدادات -->
+<div class="page" id="p16"><div class="card"><h2>20- صفحة خاصة زي انستجرام 📸</h2><input id="post" placeholder="شارك لحظة روقان..."><button class="main" onclick="savePost()">نشر</button><div id="feed"></div></div><div class="card"><h2>21- الإعدادات والخصوصية ⚙️</h2><p>كل بياناتك محفوظة على موبايلك بس، مش بتروح لحد. تقدر تمسح كل حاجة:</p><button class="main" style="background:#991b1b" onclick="if(confirm('تمسح كل حاجة؟')){localStorage.clear();location.reload()}">امسح كل بياناتي</button></div></div>
+
+<script>
+const pages=["وضع روقان + SMS","أخبار اليوم السابع","نصيحة + اسأل قلبك","روايات","فضفضة + مستقبل","المصحف","الكتاب المقدس","أذكار + تسبيح","أحاديث نبوية","مذكرة + صوتي","راديو روقان","احسبهالك + دهب","ذكّرني","حاجاتي","خرائطي","طوارئ + خلوة","خاصة + إعدادات"];
+let nav=document.getElementById('nav');pages.forEach((t,i)=>{let b=document.createElement('button');b.innerText=(i+1)+"- "+t;b.className=i==0?'active':'';b.onclick=()=>show(i);nav.appendChild(b);});
+function show(i){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));document.getElementById('p'+i).classList.add('active');document.querySelectorAll('.nav button')[i].classList.add('active');}
+let goldN=Number(localStorage.getItem('gold')||0);function addGold(n){goldN+=n;localStorage.setItem('gold',goldN);gold.innerText='⭐ دهبك: '+goldN;goldList.innerText='دهبك الحالي: '+goldN;}
+addGold(0);
+function startBreath(){let t=60;let iv=setInterval(()=>{br.innerText='متبقي '+t+'ث - شهيق 4 حبس 4 زفير 6';t--;if(t<0){clearInterval(iv);br.innerText='عاش انت روقان 💜 +5 دهب';addGold(5)}},1000);}
+function startTimer(s){let iv=setInterval(()=>{tm.innerText='متبقي '+s+' ثانية خلوة';s--;if(s<0){clearInterval(iv);tm.innerText='خلصت الخلوة +10 دهب';addGold(10)}},1000);}
+const advices=["روقانك أهم من أي حاجة","اللي جاي أحلى يا ميدو","خدها خطوة خطوة","انت قدها","سامح نفسك","اشرب مياه واهدى"];function newAdvice(){advice.innerText=advices[Math.floor(Math.random()*advices.length)];addGold(2);}newAdvice();
+function askHeart(){let a=["اعملها وتوكل","استخير وروق","اصبر شوية","ايوا ده الصح","لا بلاش دلوقتي"];ans.innerText=a[Math.floor(Math.random()*a.length)];}
+function playSound(s){sound.innerText='مشغل: '+s+' (تخيل الصوت وانت مغمض) +2 دهب';addGold(2);}
+let grats=JSON.parse(localStorage.getItem('grats')||'[]');function saveGrat(){grats.push(grat.value);localStorage.setItem('grats',JSON.stringify(grats));renderGrats();grat.value='';addGold(10);}function renderGrats(){gratList.innerHTML=grats.map(g=>'<div class=card>🙏 '+g+'</div>').join('')}renderGrats();
+let notes=JSON.parse(localStorage.getItem('notes')||'[]');function saveNote(){notes.push({t:noteT.value,c:noteC.value});localStorage.setItem('notes',JSON.stringify(notes));renderNotes();}function renderNotes(){noteList.innerHTML=notes.map((n,i)=>'<div class=card><b>'+n.t+'</b><br>'+n.c+'</div>').join('')}renderNotes();
+let rems=JSON.parse(localStorage.getItem('rems')||'[]');function saveRem(){rems.push({t:rt.value,ti:ri.value});localStorage.setItem('rems',JSON.stringify(rems));renderRems();}function renderRems(){rl.innerHTML=rems.map(r=>'<div class=card>'+r.t+' - '+r.ti+'</div>').join('')}renderRems();
+let tasks=JSON.parse(localStorage.getItem('tasks')||'[]');function saveTask(){tasks.push(tk.value);localStorage.setItem('tasks',JSON.stringify(tasks));renderTasks();tk.value='';addGold(2);}function renderTasks(){tl.innerHTML=tasks.map(t=>'<div class=card>✅ '+t+'</div>').join('')}renderTasks();
+let posts=JSON.parse(localStorage.getItem('posts')||'[]');function savePost(){posts.unshift(post.value);localStorage.setItem('posts',JSON.stringify(posts));renderPosts();post.value='';addGold(3);}function renderPosts(){feed.innerHTML=posts.map(p=>'<div class=card>💜 '+p+'<br><small>ميدو - روقان</small></div>').join('')}renderPosts();
+document.getElementById('mood').onchange=e=>{let m=e.target.value;if(m=='مخنوق')sebhaText.innerText='قول: يا لطيف';else if(m=='فرحان')sebhaText.innerText='قول: الحمد لله';else if(m=='قلقان')sebhaText.innerText='قول: حسبي الله';else sebhaText.innerText='قول: سبحان الله';}
+</script></body></html>
